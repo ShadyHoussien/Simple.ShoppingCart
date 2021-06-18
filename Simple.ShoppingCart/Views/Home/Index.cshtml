@@ -1,0 +1,25 @@
+﻿@model int
+@{
+    ViewData["Title"] = "Products";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="list-item">
+    <span class="p-cart">Electronics</span>
+    <span class="p-brand">LG</span>
+    <span class="p-name">Washing Machine</span>
+    <span class="p-description">washing maching with cutting edge technology</span>
+
+    <div class="add-to-cart">
+
+        @Html.ActionLink("add to cart", "AddToCart", "Home")
+
+        <span class="p-price">@String.Format("{0:c}", 8000)</span>
+    </div>
+    <span class="p-unit">
+        @Model
+        <text>units</text>
+    </span>
+</div>
+

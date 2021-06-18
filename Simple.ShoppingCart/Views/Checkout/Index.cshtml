@@ -1,0 +1,29 @@
+﻿
+
+
+<h1>Checkout</h1>
+
+@if (ViewBag.Cart.Quantity == 0 || ViewBag.Cart == null)
+{
+    <br />
+    <div id="EmptyDataMsg" class="alert alert-info">
+        <strong>Welcome!</strong> Your shopping cart is currently empty. Let's start shopping
+    </div>
+}
+else
+{
+    <table class="cart-page">
+        <tr>
+            <td><span class="p-name">@ViewBag.Cart.ProductName</span> </td>
+            <td><span class="p-name">@String.Format("{0:c}", ViewBag.Cart.Price)</span> </td>
+            <td>
+                <span class="p-name">@ViewBag.Cart.Quantity</span>
+            </td>
+        </tr>
+        <tr><td>Total: </td><td id="totalPrice" colspan="2">@String.Format("{0:c}", ViewBag.Cart.Price)</td></tr>
+    </table>
+    <div class="button">
+        @Html.ActionLink("Continue", "Purchase", "Checkout", null, new { @class = "btn btn-info" })
+    </div>
+}
+
